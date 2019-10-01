@@ -1,3 +1,4 @@
+import { AuthService } from './login/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     AppRoutingModule
   ],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
