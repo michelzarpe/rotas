@@ -1,0 +1,11 @@
+
+<p>
+  página: {{pagina}}
+</p>
+<div class="collection">
+        <a *ngFor="let item of cursos" 
+        [routerLink]="['/cursos',item.id]"
+        class="collection-item">{{item.nome}}</a>
+      </div>
+
+<a class="waves-effect waves-teal btn-flat" (click)="proximaPagina()">Button</a>
