@@ -14,9 +14,7 @@ export class AuthService {
   constructor(private router: Router) { }
 
   fazerLogin(usuario: Usuario) {
-
     this.usuarioAutenticado = ((usuario.email == "michelzarpe@gmail.com") && (usuario.senha == "123")) ? true : false;
-
     if (this.usuarioAutenticado) {
       this.mostraMenuEmitter.emit(true);
       this.router.navigate(['/']);
@@ -25,4 +23,10 @@ export class AuthService {
       this.router.navigate(['/login']);
     }
   }
+
+  usuarioEstaAutenticado(){
+    return this.usuarioAutenticado;
+  }
+
+
 }
