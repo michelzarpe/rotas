@@ -13,14 +13,17 @@ const routes: Routes = [
   {
     path:'cursos', 
     loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
-    canActivate: [AuthGuard],
-    canActivateChild:[CursosGuard]
+    canActivate: [AuthGuard], //verifica se está logado
+    canActivateChild:[CursosGuard], //verifica se está logado
+    canLoad: [AuthGuard] //verifica se tem autorizacao para carregar os arquivos da pagina
+
   },
   {
     path:'alunos', 
     loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule),
-    canActivate: [AuthGuard],
-    canActivateChild:[AlunosGuard]
+    canActivate: [AuthGuard], //verifica se está logado
+    canActivateChild:[AlunosGuard], //verifica se está logado
+    canLoad: [AuthGuard] //verifica se tem autorizacao para carregar os arquivos da pagina
   },
   { path:'login',component:LoginComponent},
   { path:'',component:HomeComponent, canActivate: [AuthGuard]}

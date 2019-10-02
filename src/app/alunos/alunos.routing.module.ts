@@ -4,13 +4,14 @@ import { AlunosComponent } from './alunos.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AlunosCanDeactivateGuard } from '../guards/alunos-deactivate.guards';
 
 
 const alunosRoutes: Routes = [
   {path:'',component:AlunosComponent, children:[
     {path:'novo',component:AlunoFormularioComponent},
     {path:':id',component:AlunoDetalheComponent},
-    {path:':id/editar',component:AlunoFormularioComponent}
+    {path:':id/editar',component:AlunoFormularioComponent, canDeactivate:[AlunosCanDeactivateGuard]}
 
   ]},
 ];

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AlunoFormularioComponent } from './aluno-formulario/aluno-formulario.component';
 import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 import { FormsModule } from '@angular/forms';
+import { AlunosCanDeactivateGuard } from '../guards/alunos-deactivate.guards';
 
 
 @NgModule({
@@ -24,6 +25,6 @@ import { FormsModule } from '@angular/forms';
     AlunoFormularioComponent,
     AlunoDetalheComponent
   ], 
-  providers:[AlunosService]
+  providers:[AlunosService,AlunosCanDeactivateGuard]
 })
 export class AlunosModule { }

@@ -10,7 +10,7 @@ export class AlunosGuard implements CanActivateChild{
 
 
     canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-        console.log("Guarda de rota filha ativada com sucesso > Alunos")
+        console.log("AlunosGuard > Alunos")
         return true;
     }
 }
